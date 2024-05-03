@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+.playground {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(206, 204, 204);
+  width: 100%;
+  aspect-ratio: 6 / 3;
+
+  .board,
+  .completed-board {
+    display: flex;
+    margin-top: 0px;
+    width: 100%;
+    aspect-ratio: 60 / 3;
+  }
+
+  .completed-board {
+    pointer-events: none;
+  }
+
+  .board.disabled {
+    pointer-events: none;
+  }
+}
+
+.row {
+  display: flex;
+  height: 100%;
+}
+
+.word {
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: rgb(129, 129, 129);
+  color: #ffffff;
+  text-shadow:
+    1px 0 1px #000,
+    0 1px 1px #000,
+    -1px 0 1px #000,
+    0 -1px 1px #000;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: var(--image-width) auto;
+  background-image: var(--image);
+  background-position: calc(var(--x-offset) * var(--image-width))
+    calc(var(--y-offset) * var(--image-height));
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: inset 0 0 5px 2px rgb(239, 182, 11);
+      cursor: pointer;
+    }
+  }
+}
+
+.without-picture {
+  background-image: none;
+}
+
+.without-border {
+  border: none;
+}
+
+.sentence-row {
+  width: 100%;
+  aspect-ratio: 60 / 3;
+}
+
+.hidden {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.drag {
+  background-color: rgb(255, 200, 0);
+}
+
+.audio-ico {
+  pointer-events: initial;
+  visibility: visible;
+  width: 30px;
+  height: 30px;
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+
+.invisible {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.active-volume {
+  background-color: red;
+}
+
+.invalid {
+  box-shadow: inset 0 0 5px 2px red;
+}
+
+.valid {
+  box-shadow: inset 0 0 5px 2px green;
+}

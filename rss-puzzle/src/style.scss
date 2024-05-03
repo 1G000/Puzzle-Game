@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: 1000px;
+    height: 100vh;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    --image-height: calc(var(--image-width) * 3 / 7);
+    margin-bottom: 10px;
+  }
+
+  .picture-info {
+    min-height: 20px;
+    text-align: center;
+  }
+}

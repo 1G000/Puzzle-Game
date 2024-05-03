@@ -1,0 +1,54 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  .name-input_error-length,
+  .name-input_error-symbols,
+  .surname-input_error-length,
+  .surname-input_error-symbols {
+    padding: 5px;
+    color: red;
+    display: none;
+    width: 250px;
+    margin-bottom: 3px;
+    border: 1px solid black;
+  }
+
+  #name-input,
+  #surname-input {
+    width: 250px;
+    height: 30px;
+    padding: 3px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .symbols-input_invalid,
+  .length-input_invalid {
+    border: 2px solid red;
+  }
+}
+
+.login-btn {
+  width: 70px;
+  height: 30px;
+  border-radius: 5px;
+
+  @media (hover: hover) {
+    &:hover {
+      color: red;
+      cursor: pointer;
+    }
+  }
+}
